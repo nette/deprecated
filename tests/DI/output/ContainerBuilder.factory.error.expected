@@ -1,0 +1,1 @@
+Factory 'Nette\DI\Container::foo' used in service 'one' is not callable.

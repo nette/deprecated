@@ -1,0 +1,4 @@
+Nette\DI\Statement::__set_state(array(
+	'entity' => 'Class',
+	'arguments' => array(1, 2),
+))

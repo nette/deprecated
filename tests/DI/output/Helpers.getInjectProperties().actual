@@ -1,0 +1,5 @@
+array(
+	'varA' => 'A\\AInjected',
+	'varB' => 'A\\B\\BInjected',
+	'varC' => 'A\\AInjected',
+)
