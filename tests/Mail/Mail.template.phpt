@@ -18,9 +18,10 @@ $mail = new Message();
 $mail->addTo('Lady Jane <jane@example.com>');
 
 $template = new FileTemplate;
-$template->setFile('files/template.phtml');
+$template->setFile(__DIR__ . '/files/template.phtml');
 $template->registerFilter(new Nette\Latte\Engine);
-$mail->htmlBody = $template;
+$template->mail = $mail;
+$mail->setHtmlBody($template, __DIR__ . '/files');
 
 $mailer = new TestMailer();
 $mailer->send($mail);
