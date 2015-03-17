@@ -127,7 +127,7 @@ class ClassUpdater extends Nette\Object
 
 	public function processFile($input)
 	{
-		$this->namespace = '';
+		$this->namespace = $classLevel = $level = NULL;
 		$this->uses = $this->newUses = $this->found = [];
 		$tokens = new PhpTokens($input);
 
@@ -137,7 +137,7 @@ class ClassUpdater extends Nette\Object
 				$this->uses = $this->newUses = [];
 
 			} elseif ($tokens->isCurrent(T_USE)) {
-				if ($tokens->isNext('(')) { // closure?
+				if ($classLevel || $tokens->isNext('(')) { // closure or trait?
 					continue;
 				}
 				do {
@@ -208,6 +208,18 @@ class ClassUpdater extends Nette\Object
 					$this->report('WARNING', "Found a possible deprecated member $member on line {$tokens->tokens[$pos]['line']}"
 						. ($this->deprecated[$s] ? "; use {$this->deprecated[$s]} instead" : ''));
 				}
+
+			} elseif ($tokens->isCurrent(T_CLASS)) {
+				$classLevel = $level + 1;
+
+			} elseif ($tokens->isCurrent(T_CURLY_OPEN, T_DOLLAR_OPEN_CURLY_BRACES, '{')) {
+				$level++;
+
+			} elseif ($tokens->isCurrent('}')) {
+				if ($level === $classLevel) {
+					$classLevel = NULL;
+				}
+				$level--;
 			}
 		}
 
