@@ -19,9 +19,11 @@ class Helpers extends Tracy\Helpers
 
 	/**
 	 * Returns link to editor.
+	 * @param string $file
+	 * @param int|null $line
 	 * @return Nette\Utils\Html
 	 */
-	public static function editorLink($file, $line)
+	public static function editorLink($file, $line = NULL)
 	{
 		if (Debugger::$editor && is_file($file)) {
 			$dir = dirname(strtr($file, '/', DIRECTORY_SEPARATOR));
