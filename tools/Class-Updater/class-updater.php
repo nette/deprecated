@@ -184,7 +184,7 @@ class ClassUpdater extends Nette\Object
 
 			} elseif ($tokens->isCurrent(T_DOC_COMMENT, T_COMMENT)) {
 				// @var Class or \Class or Nm\Class or Class:: (preserves CLASS)
-				$tokens->replace(preg_replace_callback('#(@(?:var(?:\s+array of)?|returns?|param|throws|link|property[\w-]*)\s+)([\w\\\\|]+)#', function($m) {
+				$tokens->replace(preg_replace_callback('#(@(?:var(?:\s+array of)?|returns?|param|throws|link|property[\w-]*)\s+)([\w\\\\|]+)#', function ($m) {
 					$parts = [];
 					foreach (explode('|', $m[2]) as $part) {
 						$newClass = $this->rename($part, TRUE, $renamed);
