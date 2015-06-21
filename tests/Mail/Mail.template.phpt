@@ -13,8 +13,9 @@ require __DIR__ . '/../bootstrap.php';
 
 require __DIR__ . '/Mail.inc';
 
+$_SERVER['HTTP_HOST'] = 'localhost';
 
-$mail = new Message();
+$mail = new Message;
 $mail->addTo('Lady Jane <jane@example.com>');
 
 $template = new FileTemplate;
