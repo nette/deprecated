@@ -7,7 +7,6 @@
 
 namespace Nette\Diagnostics;
 
-use Nette;
 use Tracy;
 
 
