@@ -7,6 +7,7 @@
 
 namespace Nette\Templating;
 
+use Latte\CompileException;
 use Nette;
 use Nette\Caching;
 use Latte;
@@ -100,7 +101,7 @@ class FileTemplate extends Template implements IFileTemplate
 			try {
 				$compiled = "<?php\n\n// source file: $this->file\n\n?>" . $this->compile();
 
-			} catch (FilterException $e) {
+			} catch (CompileException $e) {
 				throw $e->setSource(file_get_contents($this->file), $e->sourceLine, $this->file);
 			}
 

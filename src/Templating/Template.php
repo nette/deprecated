@@ -57,7 +57,7 @@ class Template extends Nette\Object implements ITemplate
 
 	/**
 	 * Returns template source code.
-	 * @return source
+	 * @return string
 	 */
 	public function getSource()
 	{

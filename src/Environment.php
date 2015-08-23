@@ -155,7 +155,7 @@ class Environment
 
 	/**
 	 * Get initial instance of context.
-	 * @return \SystemContainer|Nette\DI\Container
+	 * @return Nette\DI\Container
 	 */
 	public static function getContext()
 	{
