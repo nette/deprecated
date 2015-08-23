@@ -198,7 +198,7 @@ class Environment
 	 */
 	public static function getHttpRequest()
 	{
-		return self::getContext()->getByType('Nette\Http\IRequest');
+		return self::getContext()->getByType(Nette\Http\IRequest::class);
 	}
 
 
@@ -207,7 +207,7 @@ class Environment
 	 */
 	public static function getHttpContext()
 	{
-		return self::getContext()->getByType('Nette\Http\Context');
+		return self::getContext()->getByType(Nette\Http\Context::class);
 	}
 
 
@@ -216,7 +216,7 @@ class Environment
 	 */
 	public static function getHttpResponse()
 	{
-		return self::getContext()->getByType('Nette\Http\IResponse');
+		return self::getContext()->getByType(Nette\Http\IResponse::class);
 	}
 
 
@@ -225,7 +225,7 @@ class Environment
 	 */
 	public static function getApplication()
 	{
-		return self::getContext()->getByType('Nette\Application\Application');
+		return self::getContext()->getByType(Nette\Application\Application::class);
 	}
 
 
@@ -234,7 +234,7 @@ class Environment
 	 */
 	public static function getUser()
 	{
-		return self::getContext()->getByType('Nette\Security\User');
+		return self::getContext()->getByType(Nette\Security\User::class);
 	}
 
 
@@ -243,7 +243,7 @@ class Environment
 	 */
 	public static function getRobotLoader()
 	{
-		return self::getContext()->getByType('Nette\Loaders\RobotLoader');
+		return self::getContext()->getByType(Nette\Loaders\RobotLoader::class);
 	}
 
 
@@ -256,7 +256,7 @@ class Environment
 	 */
 	public static function getCache($namespace = '')
 	{
-		return new Caching\Cache(self::getContext()->getByType('Nette\Caching\IStorage'), $namespace);
+		return new Caching\Cache(self::getContext()->getByType(Nette\Caching\IStorage::class), $namespace);
 	}
 
 
@@ -268,8 +268,8 @@ class Environment
 	public static function getSession($namespace = NULL)
 	{
 		return $namespace === NULL
-			? self::getContext()->getByType('Nette\Http\Session')
-			: self::getContext()->getByType('Nette\Http\Session')->getSection($namespace);
+			? self::getContext()->getByType(Nette\Http\Session::class)
+			: self::getContext()->getByType(Nette\Http\Session::class)->getSection($namespace);
 	}
 
 

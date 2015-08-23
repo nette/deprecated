@@ -6,27 +6,27 @@
  */
 
 
-if (!class_exists('Nette\Loaders\NetteLoader')) {
+if (!class_exists(Nette\Loaders\NetteLoader::class)) {
 	require __DIR__ . '/Loaders/NetteLoader.php';
 }
 
 Nette\Loaders\NetteLoader::getInstance()->register();
 
-class_alias('Nette\Configurator', 'Nette\Config\Configurator');
-class_alias('Nette\DI\CompilerExtension', 'Nette\Config\CompilerExtension');
-class_alias('Tracy\Bar', 'Nette\Diagnostics\Bar');
-class_alias('Tracy\BlueScreen', 'Nette\Diagnostics\BlueScreen');
-class_alias('Tracy\Dumper', 'Nette\Diagnostics\Dumper');
-class_alias('Latte\CompileException', 'Nette\Latte\CompileException');
-class_alias('Latte\IMacro', 'Nette\Latte\IMacro');
-class_alias('Latte\Macros\MacroSet', 'Nette\Latte\Macros\MacroSet');
-class_alias('Nette\Utils\ArrayHash', 'Nette\ArrayHash');
-class_alias('Nette\Utils\ArrayList', 'Nette\ArrayList');
-class_alias('Nette\Utils\DateTime', 'Nette\DateTime');
-class_alias('Nette\Utils\Image', 'Nette\Image');
-class_alias('Nette\Utils\ObjectMixin', 'Nette\ObjectMixin');
-class_alias('Nette\Neon\Exception', 'Nette\Utils\NeonException');
-class_alias('Nette\Neon\Entity', 'Nette\Utils\NeonEntity');
-class_alias('Nette\Neon\Neon', 'Nette\Utils\Neon');
+class_alias(Nette\Configurator::class, Nette\Config\Configurator::class);
+class_alias(Nette\DI\CompilerExtension::class, Nette\Config\CompilerExtension::class);
+class_alias(Tracy\Bar::class, Nette\Diagnostics\Bar::class);
+class_alias(Tracy\BlueScreen::class, Nette\Diagnostics\BlueScreen::class);
+class_alias(Tracy\Dumper::class, Nette\Diagnostics\Dumper::class);
+class_alias(Latte\CompileException::class, Nette\Latte\CompileException::class);
+class_alias(Latte\IMacro::class, Nette\Latte\IMacro::class);
+class_alias(Latte\Macros\MacroSet::class, Nette\Latte\Macros\MacroSet::class);
+class_alias(Nette\Utils\ArrayHash::class, Nette\ArrayHash::class);
+class_alias(Nette\Utils\ArrayList::class, Nette\ArrayList::class);
+class_alias(Nette\Utils\DateTime::class, Nette\DateTime::class);
+class_alias(Nette\Utils\Image::class, Nette\Image::class);
+class_alias(Nette\Utils\ObjectMixin::class, Nette\ObjectMixin::class);
+class_alias(Nette\Neon\Exception::class, Nette\Utils\NeonException::class);
+class_alias(Nette\Neon\Entity::class, Nette\Utils\NeonEntity::class);
+class_alias(Nette\Neon\Neon::class, Nette\Utils\Neon::class);
 
 require_once __DIR__ . '/shortcuts.php';

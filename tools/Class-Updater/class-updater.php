@@ -32,33 +32,33 @@ class ClassUpdater extends Nette\Object
 	/** @var array */
 	private $replaces = [
 		// nette 2.1
-		'Nette\Config' => 'Nette\DI',
-		'Nette\Utils\PhpGenerator' => 'Nette\PhpGenerator',
-		'Nette\Database\Statement' => 'Nette\Database\ResultSet',
+		Nette\Config::class => Nette\DI::class,
+		Nette\Utils\PhpGenerator::class => Nette\PhpGenerator::class,
+		Nette\Database\Statement::class => Nette\Database\ResultSet::class,
 		'Nette\Diagnostics\Debugger::$blueScreen' => 'Tracy\Debugger::getBlueScreen()',
 		'Nette\Diagnostics\Debugger::$bar' => 'Tracy\Debugger::getBar()',
 		'Nette\Diagnostics\Debugger::$logger' => 'Tracy\Debugger::getLogger()',
 		'Nette\Diagnostics\Debugger::$fireLogger' => 'Tracy\Debugger::getFireLogger()',
 
 		// nette 2.2
-		'Nette\Config\Configurator' => 'Nette\Configurator',
-		'Nette\Http\User' => 'Nette\Security\User',
-		'Nette\Templating\DefaultHelpers' => 'Nette\Templating\Helpers',
-		'Nette\Templating\FilterException' => 'Latte\CompileException',
-		'Nette\Diagnostics' => 'Tracy',
-		'Nette\Latte' => 'Latte',
-		'Nette\Latte\ParseException' => 'Latte\CompileException',
-		'Nette\Latte\Macros\CacheMacro' => 'Nette\Bridges\CacheLatte\CacheMacro',
-		'Nette\Latte\Macros\FormMacros' => 'Nette\Bridges\FormsLatte\FormMacros',
-		'Nette\Latte\Macros\UIMacros' => 'Nette\Bridges\ApplicationLatte\UIMacros',
-		'Nette\ArrayHash' => 'Nette\Utils\ArrayHash',
-		'Nette\ArrayList' => 'Nette\Utils\ArrayList',
-		'Nette\DateTime' => 'Nette\Utils\DateTime',
-		'Nette\Image' => 'Nette\Utils\Image',
-		'Nette\ObjectMixin' => 'Nette\Utils\ObjectMixin',
-		'Nette\Utils\NeonException' => 'Nette\Neon\Exception',
-		'Nette\Utils\NeonEntity' => 'Nette\Neon\Entity',
-		'Nette\Utils\Neon' => 'Nette\Neon\Neon',
+		Nette\Config\Configurator::class => Nette\Configurator::class,
+		Nette\Http\User::class => Nette\Security\User::class,
+		Nette\Templating\DefaultHelpers::class => Nette\Templating\Helpers::class,
+		Nette\Templating\FilterException::class => Latte\CompileException::class,
+		Nette\Diagnostics::class => 'Tracy',
+		Nette\Latte::class => 'Latte',
+		Nette\Latte\ParseException::class => Latte\CompileException::class,
+		Nette\Latte\Macros\CacheMacro::class => Nette\Bridges\CacheLatte\CacheMacro::class,
+		Nette\Latte\Macros\FormMacros::class => Nette\Bridges\FormsLatte\FormMacros::class,
+		Nette\Latte\Macros\UIMacros::class => Nette\Bridges\ApplicationLatte\UIMacros::class,
+		Nette\ArrayHash::class => Nette\Utils\ArrayHash::class,
+		Nette\ArrayList::class => Nette\Utils\ArrayList::class,
+		Nette\DateTime::class => Nette\Utils\DateTime::class,
+		Nette\Image::class => Nette\Utils\Image::class,
+		Nette\ObjectMixin::class => Nette\Utils\ObjectMixin::class,
+		Nette\Utils\NeonException::class => Nette\Neon\Exception::class,
+		Nette\Utils\NeonEntity::class => Nette\Neon\Entity::class,
+		Nette\Utils\Neon::class => Nette\Neon\Neon::class,
 	];
 
 	/** @var array */
@@ -69,14 +69,14 @@ class ClassUpdater extends Nette\Object
 		'Nette\Diagnostics\Debugger::toStringException' => FALSE,
 		'Nette\Diagnostics\Helpers::clickableDump' => FALSE,
 		'Nette\Diagnostics\Helpers::htmlDump' => FALSE,
-		'Nette\Loaders\AutoLoader' => FALSE,
+		Nette\Loaders\AutoLoader::class => FALSE,
 		'Nette\Framework::$iAmUsingBadHost' => FALSE,
 
 		// nette 2.2
-		'Nette\Templating' => FALSE,
-		'Nette\Utils\LimitedScope' => FALSE,
-		'Nette\Caching\Storages\PhpFileStorage' => FALSE,
-		'Nette\Utils\MimeTypeDetector' => FALSE,
+		Nette\Templating::class => FALSE,
+		Nette\Utils\LimitedScope::class => FALSE,
+		Nette\Caching\Storages\PhpFileStorage::class => FALSE,
+		Nette\Utils\MimeTypeDetector::class => FALSE,
 	];
 
 

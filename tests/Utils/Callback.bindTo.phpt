@@ -37,7 +37,7 @@ test(function () {
 test(function () {
 	Assert::exception(function () {
 		Callback::create('strlen')->bindTo(new stdClass);
-	}, 'Nette\InvalidStateException', "Callback 'strlen' have not any bound object.");
+	}, Nette\InvalidStateException::class, "Callback 'strlen' have not any bound object.");
 
 	Assert::exception(function () {
 		Callback::create('Test::set')->bindTo(1);

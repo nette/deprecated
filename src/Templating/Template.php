@@ -222,7 +222,7 @@ class Template extends Nette\Object implements ITemplate
 			$this->latte = $callback;
 		} elseif (is_array($callback) && $callback[0] instanceof Latte\Engine) {
 			$this->latte = $callback[0];
-		} elseif (strpos(Callback::toString($callback), 'Latte\Engine') !== FALSE) {
+		} elseif (strpos(Callback::toString($callback), Latte\Engine::class) !== FALSE) {
 			$this->latte = TRUE;
 		} elseif ($this->latte) {
 			throw new Nette\DeprecatedException('Adding filters after Latte is not possible.');
