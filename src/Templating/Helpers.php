@@ -9,6 +9,7 @@ namespace Nette\Templating;
 
 use Nette;
 use Latte;
+use Nette\Utils\Strings;
 
 
 /**
@@ -44,7 +45,7 @@ class Helpers extends Latte\Runtime\Filters
 
 	/**
 	 * Date/time modification.
-	 * @param  string|int|DateTime
+	 * @param  string|int|\DateTime
 	 * @param  string|int
 	 * @param  string
 	 * @return Nette\Utils\DateTime
