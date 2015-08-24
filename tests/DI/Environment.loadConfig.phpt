@@ -13,7 +13,7 @@ require __DIR__ . '/../bootstrap.php';
 
 Environment::loadConfig('files/environment.ini', 'production');
 
-Assert::type('Nette\Application\Routers\SimpleRouter', Environment::getRouter());
+Assert::type(Nette\Application\Routers\SimpleRouter::class, Environment::getRouter());
 
 Assert::same('hello world', Environment::getVariable('foo'));
 

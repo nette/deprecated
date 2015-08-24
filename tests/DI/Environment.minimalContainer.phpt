@@ -16,7 +16,7 @@ Assert::null(Environment::getVariable('foo', NULL), "Getting variable 'foo':");
 
 Assert::exception(function () {
 	Environment::getVariable('foo');
-}, 'Nette\InvalidStateException', "Unknown environment variable 'foo'.");
+}, Nette\InvalidStateException::class, "Unknown environment variable 'foo'.");
 
 
 test(function () {
@@ -33,9 +33,9 @@ test(function () {
 
 test(function () {
 	// Services
-	Assert::same('Nette\Http\Response', get_class(Environment::getHttpResponse()));
-	Assert::same('Nette\Application\Application', get_class(Environment::getApplication()));
-	Assert::same('Nette\Caching\Cache', get_class(Environment::getCache('my')));
+	Assert::same(Nette\Http\Response::class, get_class(Environment::getHttpResponse()));
+	Assert::same(Nette\Application\Application::class, get_class(Environment::getApplication()));
+	Assert::same(Nette\Caching\Cache::class, get_class(Environment::getCache('my')));
 });
 
 

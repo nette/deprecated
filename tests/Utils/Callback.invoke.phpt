@@ -33,7 +33,7 @@ test(function () {
 test(function () {
 	Assert::exception(function () {
 		Callback::create('undefined')->invoke();
-	}, 'Nette\InvalidStateException', "Callback 'undefined' is not callable.");
+	}, Nette\InvalidStateException::class, "Callback 'undefined' is not callable.");
 
 	Assert::exception(function () {
 		Callback::create(NULL)->invoke();
