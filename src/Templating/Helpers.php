@@ -45,7 +45,7 @@ class Helpers extends Latte\Runtime\Filters
 
 	/**
 	 * Date/time modification.
-	 * @param  string|int|\DateTime
+	 * @param  string|int|\DateTimeInterface
 	 * @param  string|int
 	 * @param  string
 	 * @return Nette\Utils\DateTime
