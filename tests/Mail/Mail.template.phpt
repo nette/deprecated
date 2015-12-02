@@ -11,7 +11,7 @@ use Tester\Assert;
 
 require __DIR__ . '/../bootstrap.php';
 
-require __DIR__ . '/Mail.inc';
+require __DIR__ . '/Mail.php';
 
 $_SERVER['HTTP_HOST'] = 'localhost';
 
