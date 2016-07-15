@@ -11,6 +11,7 @@ if (@!include __DIR__ . '/../vendor/autoload.php') {
 
 Tester\Environment::setup();
 date_default_timezone_set('Europe/Prague');
+error_reporting(~E_USER_DEPRECATED);
 
 
 // create temporary directory
