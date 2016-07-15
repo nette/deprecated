@@ -20,6 +20,9 @@ class Engine extends Latte\Engine
 
 	public function __construct()
 	{
+		if (method_exists('Latte\Engine', '__construct')) {
+			parent::__construct();
+		}
 		$this->getParser()->shortNoEscape = TRUE;
 		$this->addFilter('url', 'rawurlencode');
 		foreach (array('normalize', 'toAscii', 'webalize', 'padLeft', 'padRight', 'reverse') as $name) {
