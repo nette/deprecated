@@ -35,6 +35,7 @@ class Helpers extends Latte\Runtime\Filters
 	 */
 	public static function loader($helper)
 	{
+		trigger_error(__CLASS__ . ' is deprecated.', E_USER_DEPRECATED);
 		if (method_exists(__CLASS__, $helper)) {
 			return array(__CLASS__, $helper);
 		} elseif (isset(self::$helpers[$helper])) {

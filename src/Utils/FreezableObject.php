@@ -52,6 +52,7 @@ abstract class FreezableObject extends Object implements IFreezable
 	 */
 	protected function updating()
 	{
+		trigger_error(__CLASS__ . ' is deprecated.', E_USER_DEPRECATED);
 		if ($this->frozen) {
 			$class = get_class($this);
 			throw new InvalidStateException("Cannot modify a frozen object $class.");

@@ -43,6 +43,12 @@ class Template extends Nette\Object implements ITemplate
 	private $cacheStorage;
 
 
+	public function __construct()
+	{
+		trigger_error(__CLASS__ . ' is deprecated.', E_USER_DEPRECATED);
+	}
+
+
 	/**
 	 * Sets template source code.
 	 * @param  string

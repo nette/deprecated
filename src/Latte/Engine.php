@@ -20,6 +20,7 @@ class Engine extends Latte\Engine
 
 	public function __construct()
 	{
+		trigger_error(__CLASS__ . ' is deprecated, use Latte\Engine.', E_USER_DEPRECATED);
 		if (method_exists('Latte\Engine', '__construct')) {
 			parent::__construct();
 		}

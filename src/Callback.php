@@ -37,6 +37,7 @@ class Callback extends Object
 	 */
 	public function __construct($cb, $m = NULL)
 	{
+		trigger_error(__CLASS__ . ' is deprecated.', E_USER_DEPRECATED);
 		if ($m !== NULL) {
 			$cb = array($cb, $m);
 
