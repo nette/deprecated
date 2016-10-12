@@ -8,6 +8,7 @@
 if (!function_exists('dlog')) {
 	/**
 	 * Tracy\Debugger::log() shortcut.
+	 * @deprecated
 	 */
 	function dlog($var = NULL)
 	{
@@ -29,6 +30,7 @@ if (!function_exists('callback')) {
 	 * @param  mixed   class, object, callable
 	 * @param  string  method
 	 * @return Nette\Callback
+	 * @deprecated
 	 */
 	function callback($callback, $m = NULL)
 	{
