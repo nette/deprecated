@@ -7,10 +7,6 @@ php:
     - 7.0
     - 7.1
 
-matrix:
-    allow_failures:
-        - php: 7.1
-
 script:
     - vendor/bin/tester tests -s -p php
     - php code-checker/src/code-checker.php -i template.latte
