@@ -70,7 +70,7 @@ class NetteLoader
 
 	/**
 	 * Returns singleton instance with lazy instantiation.
-	 * @return NetteLoader
+	 * @return static
 	 */
 	public static function getInstance()
 	{

@@ -52,7 +52,7 @@ class Template extends Nette\Object implements ITemplate
 	/**
 	 * Sets template source code.
 	 * @param  string
-	 * @return self
+	 * @return static
 	 */
 	public function setSource($source)
 	{
@@ -220,7 +220,7 @@ class Template extends Nette\Object implements ITemplate
 	/**
 	 * Registers callback as template compile-time filter.
 	 * @param  callable
-	 * @return self
+	 * @return static
 	 */
 	public function registerFilter($callback)
 	{
@@ -253,7 +253,7 @@ class Template extends Nette\Object implements ITemplate
 	 * Registers callback as template run-time helper.
 	 * @param  string
 	 * @param  callable
-	 * @return self
+	 * @return static
 	 */
 	public function registerHelper($name, $callback)
 	{
@@ -265,7 +265,7 @@ class Template extends Nette\Object implements ITemplate
 	/**
 	 * Registers callback as template run-time helpers loader.
 	 * @param  callable
-	 * @return self
+	 * @return static
 	 */
 	public function registerHelperLoader($callback)
 	{
@@ -320,7 +320,7 @@ class Template extends Nette\Object implements ITemplate
 
 	/**
 	 * Sets translate adapter.
-	 * @return self
+	 * @return static
 	 */
 	public function setTranslator(Nette\Localization\ITranslator $translator = NULL)
 	{
@@ -334,7 +334,7 @@ class Template extends Nette\Object implements ITemplate
 
 	/**
 	 * Adds new template parameter.
-	 * @return self
+	 * @return static
 	 */
 	public function add($name, $value)
 	{
@@ -350,7 +350,7 @@ class Template extends Nette\Object implements ITemplate
 	/**
 	 * Sets all parameters.
 	 * @param  array
-	 * @return self
+	 * @return static
 	 */
 	public function setParameters(array $params)
 	{
@@ -420,7 +420,7 @@ class Template extends Nette\Object implements ITemplate
 
 	/**
 	 * Set cache storage.
-	 * @return self
+	 * @return static
 	 */
 	public function setCacheStorage(Caching\IStorage $storage)
 	{

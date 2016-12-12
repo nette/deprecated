@@ -23,7 +23,7 @@ class Callback extends Object
 	 * Factory. Workaround for missing (new Callback)->invoke() in PHP 5.3.
 	 * @param  mixed   class, object, callable
 	 * @param  string  method
-	 * @return Callback
+	 * @return self
 	 */
 	public static function create($callback, $m = NULL)
 	{
@@ -142,7 +142,7 @@ class Callback extends Object
 
 	/**
 	 * Duplicates the callback with a new bound object.
-	 * @return Callback
+	 * @return static
 	 */
 	public function bindTo($newthis)
 	{
