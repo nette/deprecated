@@ -49,7 +49,7 @@ class Debugger extends Tracy\Debugger
 		self::$bar = self::getBar();
 		self::$logger = self::getLogger();
 		self::$fireLogger = self::getFireLogger();
-		self::$consoleColors = & Tracy\Dumper::$terminalColors;
+		self::$consoleColors = &Tracy\Dumper::$terminalColors;
 	}
 
 

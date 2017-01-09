@@ -5,7 +5,7 @@
  */
 
 if (@!include __DIR__ . '/vendor/autoload.php') {
-	echo('Install packages using `composer install`');
+	echo 'Install packages using `composer install`';
 	exit(1);
 }
 
@@ -225,7 +225,7 @@ class ClassUpdater extends Nette\Object
 	/**
 	 * @return string
 	 */
-	function rename($name, $useAliases = true, &$renamed = false)
+	public function rename($name, $useAliases = true, &$renamed = false)
 	{
 		@list($class, $member) = preg_split('#(?=::)#', $name);
 
@@ -276,7 +276,7 @@ class ClassUpdater extends Nette\Object
 	 * @param  string
 	 * @return string
 	 */
-	function applyUse($class)
+	public function applyUse($class)
 	{
 		$best = strncasecmp($class, "$this->namespace\\", strlen("$this->namespace\\")) === 0
 			? substr($class, strlen($this->namespace) + 1)
@@ -301,7 +301,7 @@ class ClassUpdater extends Nette\Object
 	 * @param  string
 	 * @return string|null
 	 */
-	function resolveClass($class)
+	public function resolveClass($class)
 	{
 		$segment = strtolower(substr($class, 0, strpos("$class\\", '\\')));
 		if ($segment === '') {
@@ -322,7 +322,7 @@ class ClassUpdater extends Nette\Object
  */
 class PhpTokens extends Nette\Utils\TokenIterator
 {
-	function __construct($code)
+	public function __construct($code)
 	{
 		$this->ignored = [T_COMMENT, T_DOC_COMMENT, T_WHITESPACE];
 		foreach (token_get_all($code) as $token) {
@@ -331,7 +331,7 @@ class PhpTokens extends Nette\Utils\TokenIterator
 	}
 
 
-	function replace($s, $start = null)
+	public function replace($s, $start = null)
 	{
 		for ($i = ($start === null ? $this->position : $start); $i < $this->position; $i++) {
 			$this->tokens[$i] = [''];
@@ -342,7 +342,7 @@ class PhpTokens extends Nette\Utils\TokenIterator
 
 
 
-$cmd = new Nette\CommandLine\Parser(<<<XX
+$cmd = new Nette\CommandLine\Parser(<<<'XX'
 Usage:
     php class-updater.php [options] [<path>]
 

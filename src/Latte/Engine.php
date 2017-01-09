@@ -53,7 +53,7 @@ class Engine extends Latte\Engine
 	}
 
 
-	public function & __get($name)
+	public function &__get($name)
 	{
 		switch (strtolower($name)) {
 			case 'parser':

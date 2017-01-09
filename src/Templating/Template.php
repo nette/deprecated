@@ -450,7 +450,7 @@ class Template extends Nette\Object implements ITemplate
 	 * @param  array
 	 * @return string
 	 */
-	private static function extractPhp($source, & $blocks)
+	private static function extractPhp($source, &$blocks)
 	{
 		$res = '';
 		$blocks = array();
@@ -469,12 +469,12 @@ class Template extends Nette\Object implements ITemplate
 					continue;
 
 				} elseif ($token[0] === T_OPEN_TAG && $token[1] === '<?' && isset($tokens[$n + 1][1]) && $tokens[$n + 1][1] === 'xml') {
-					$php = & $res;
+					$php = &$res;
 					$token[1] = '<<?php ?>?';
 
 				} elseif ($token[0] === T_OPEN_TAG || $token[0] === T_OPEN_TAG_WITH_ECHO) {
 					$res .= $id = '<@php:p' . count($blocks) . '@';
-					$php = & $blocks[$id];
+					$php = &$blocks[$id];
 				}
 				$php .= $token[1];
 
