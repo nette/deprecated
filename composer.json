@@ -32,5 +32,10 @@
 	"autoload": {
 		"classmap": ["src/"],
 		"files": ["src/loader.php"]
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "3.0-dev"
+		}
 	}
 }
