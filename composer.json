@@ -16,23 +16,13 @@
 		}
 	],
 	"require-dev": {
-		"nette/application": "^2.2",
-		"nette/bootstrap": "^2.2.1",
-		"nette/caching": "^2.2",
-		"nette/forms": "^2.2",
-		"nette/mail": "^2.2",
-		"nette/robot-loader": "^2.2",
-		"nette/safe-stream": "^2.2",
-		"nette/utils": "^2.2",
-		"nette/security": "^2.2",
-		"latte/latte": "^2.2",
-		"tracy/tracy": "^2.2",
-		"nette/tester": "^1.1"
+		"tracy/tracy": "^2.6",
+		"nette/tester": "^2.0"
 	},
 	"autoload": {
-		"classmap": ["src/"],
-		"files": ["src/loader.php"]
+		"classmap": ["src/"]
 	},
+	"minimum-stability": "dev",
 	"extra": {
 		"branch-alias": {
 			"dev-master": "3.0-dev"
