@@ -1,7 +1,8 @@
 {
 	"name": "nette/deprecated",
 	"type": "library",
-	"description": "APIs and features removed from Nette Framework",
+	"description": "Nette Deprecated: APIs and features removed from Nette Framework",
+	"keywords": ["nette"],
 	"homepage": "https://nette.org",
 	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
 	"authors": [
