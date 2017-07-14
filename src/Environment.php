@@ -335,5 +335,4 @@ class Environment
 			return $params;
 		}
 	}
-
 }

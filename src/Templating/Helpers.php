@@ -7,8 +7,8 @@
 
 namespace Nette\Templating;
 
-use Nette;
 use Latte;
+use Nette;
 use Nette\Utils\Strings;
 
 
@@ -85,5 +85,4 @@ class Helpers extends Latte\Runtime\Filters
 	{
 		return Latte\Helpers::optimizePhp($source, $lineLength);
 	}
-
 }

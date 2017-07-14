@@ -57,5 +57,4 @@ class Debugger extends Tracy\Debugger
 	{
 		return self::getBar()->addPanel($panel, $id);
 	}
-
 }

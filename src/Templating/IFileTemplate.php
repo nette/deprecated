@@ -26,5 +26,4 @@ interface IFileTemplate extends ITemplate
 	 * @return string  template file path
 	 */
 	function getFile();
-
 }

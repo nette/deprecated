@@ -25,5 +25,4 @@ interface IFreezable
 	 * @return bool
 	 */
 	function isFrozen();
-
 }

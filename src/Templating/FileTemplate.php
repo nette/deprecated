@@ -7,10 +7,10 @@
 
 namespace Nette\Templating;
 
+use Latte;
 use Latte\CompileException;
 use Nette;
 use Nette\Caching;
-use Latte;
 
 
 /**
@@ -115,5 +115,4 @@ class FileTemplate extends Template implements IFileTemplate
 		$isFile = $cached !== NULL && $storage instanceof Caching\Storages\PhpFileStorage;
 		self::load($isFile ? $cached['file'] : $compiled, $this->getParameters(), $isFile);
 	}
-
 }

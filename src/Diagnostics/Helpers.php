@@ -39,11 +39,13 @@ class Helpers extends Tracy\Helpers
 		}
 	}
 
+
 	public static function htmlDump($var)
 	{
 		trigger_error(__METHOD__ . '() is deprecated; use Tracy\Dumper::toHtml() instead.', E_USER_DEPRECATED);
 		return Tracy\Dumper::toHtml($var);
 	}
+
 
 	public static function clickableDump($var)
 	{
@@ -51,10 +53,10 @@ class Helpers extends Tracy\Helpers
 		return Tracy\Dumper::toHtml($var);
 	}
 
+
 	public static function textDump($var)
 	{
 		trigger_error(__METHOD__ . '() is deprecated; use Tracy\Dumper::toText() instead.', E_USER_DEPRECATED);
 		return Tracy\Dumper::toText($var);
 	}
-
 }

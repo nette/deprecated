@@ -169,5 +169,4 @@ class Callback extends Object
 			return $textual;
 		}
 	}
-
 }

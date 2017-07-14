@@ -7,10 +7,10 @@
 
 namespace Nette\Templating;
 
+use Latte;
 use Nette;
 use Nette\Caching;
 use Nette\Utils\Callback;
-use Latte;
 
 
 /**
@@ -484,5 +484,4 @@ class Template extends Nette\Object implements ITemplate
 		}
 		return $res;
 	}
-
 }

@@ -56,5 +56,4 @@ class PhpFileStorage extends FileStorage
 	{
 		return dirname(parent::getCacheFile(NULL));
 	}
-
 }

@@ -80,7 +80,6 @@ class ClassUpdater extends Nette\Object
 	];
 
 
-
 	public function run($folder)
 	{
 		set_time_limit(0);
@@ -97,8 +96,7 @@ class ClassUpdater extends Nette\Object
 
 		$counter = 0;
 		foreach (Nette\Utils\Finder::findFiles('*.php')->from($folder)
-			->exclude(['.*', '*.tmp', 'tmp', 'temp', 'log']) as $file)
-		{
+			->exclude(['.*', '*.tmp', 'tmp', 'temp', 'log']) as $file) {
 			echo str_pad(str_repeat('.', $counter++ % 40), 40), "\x0D";
 
 			$this->fileName = ltrim(str_replace($folder, '', $file), '/\\');
@@ -117,12 +115,10 @@ class ClassUpdater extends Nette\Object
 	}
 
 
-
 	public function report($level, $message = '')
 	{
 		echo "[$level] $this->fileName   $message\n";
 	}
-
 
 
 	public function processFile($input)
@@ -159,7 +155,6 @@ class ClassUpdater extends Nette\Object
 						$tokens->replace("$class as $newAs", $pos);
 					}
 					$this->newUses[strtolower($newAs)] = [$newClass, $newAs];
-
 				} while ($tokens->nextToken(','));
 
 			} elseif ($tokens->isCurrent(T_INSTANCEOF, T_EXTENDS, T_IMPLEMENTS, T_NEW)) {
@@ -227,7 +222,6 @@ class ClassUpdater extends Nette\Object
 	}
 
 
-
 	/**
 	 * @return string
 	 */
@@ -277,7 +271,6 @@ class ClassUpdater extends Nette\Object
 	}
 
 
-
 	/**
 	 * Apply use statements.
 	 * @param  string
@@ -303,7 +296,6 @@ class ClassUpdater extends Nette\Object
 	}
 
 
-
 	/**
 	 * Resolve use statements.
 	 * @param  string
@@ -321,7 +313,6 @@ class ClassUpdater extends Nette\Object
 		}
 		return ltrim($full, '\\');
 	}
-
 }
 
 
@@ -331,7 +322,6 @@ class ClassUpdater extends Nette\Object
  */
 class PhpTokens extends Nette\Utils\TokenIterator
 {
-
 	function __construct($code)
 	{
 		$this->ignored = [T_COMMENT, T_DOC_COMMENT, T_WHITESPACE];
@@ -341,7 +331,6 @@ class PhpTokens extends Nette\Utils\TokenIterator
 	}
 
 
-
 	function replace($s, $start = NULL)
 	{
 		for ($i = ($start === NULL ? $this->position : $start); $i < $this->position; $i++) {
@@ -349,7 +338,6 @@ class PhpTokens extends Nette\Utils\TokenIterator
 		}
 		$this->tokens[$this->position] = [$s];
 	}
-
 }
 
 

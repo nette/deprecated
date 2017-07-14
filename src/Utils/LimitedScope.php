@@ -67,5 +67,4 @@ class LimitedScope
 		}
 		return include func_get_arg(0);
 	}
-
 }

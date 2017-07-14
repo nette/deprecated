@@ -7,8 +7,8 @@
 
 namespace Nette\Latte;
 
-use Nette;
 use Latte;
+use Nette;
 
 
 /**
@@ -17,6 +17,7 @@ use Latte;
 class Engine extends Latte\Engine
 {
 	private $fixed = FALSE;
+
 
 	public function __construct()
 	{
@@ -65,5 +66,4 @@ class Engine extends Latte\Engine
 
 		return parent::__get($name);
 	}
-
 }

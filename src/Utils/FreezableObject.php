@@ -58,5 +58,4 @@ abstract class FreezableObject extends Object implements IFreezable
 			throw new InvalidStateException("Cannot modify a frozen object $class.");
 		}
 	}
-
 }

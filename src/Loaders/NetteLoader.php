@@ -111,5 +111,4 @@ class NetteLoader
 			require $file;
 		}
 	}
-
 }

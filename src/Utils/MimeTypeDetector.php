@@ -54,5 +54,4 @@ class MimeTypeDetector
 		$type = finfo_buffer(finfo_open(FILEINFO_MIME_TYPE), $data);
 		return strpos($type, '/') ? $type : 'application/octet-stream';
 	}
-
 }

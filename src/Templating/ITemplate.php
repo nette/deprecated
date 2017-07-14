@@ -19,5 +19,4 @@ interface ITemplate
 	 * @return void
 	 */
 	function render();
-
 }
