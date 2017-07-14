@@ -33,7 +33,7 @@ class LimitedScope
 	 * @param  array   local variables
 	 * @return mixed   the return value of the evaluated code
 	 */
-	public static function evaluate(/*$code, array $vars = NULL*/)
+	public static function evaluate(/*$code, array $vars = null*/)
 	{
 		trigger_error(__METHOD__ . '() is deprecated.', E_USER_DEPRECATED);
 		if (func_num_args() > 1) {
@@ -43,7 +43,7 @@ class LimitedScope
 			unset($__k, $__v);
 		}
 		$res = eval('?>' . func_get_arg(0));
-		if ($res === FALSE && ($error = error_get_last()) && $error['type'] === E_PARSE) {
+		if ($res === false && ($error = error_get_last()) && $error['type'] === E_PARSE) {
 			throw new \ErrorException($error['message'], 0, $error['type'], $error['file'], $error['line']);
 		}
 		return $res;
@@ -56,7 +56,7 @@ class LimitedScope
 	 * @param  array   local variables
 	 * @return mixed   the return value of the included file
 	 */
-	public static function load(/*$file, array $vars = NULL*/)
+	public static function load(/*$file, array $vars = null*/)
 	{
 		trigger_error(__METHOD__ . '() is deprecated.', E_USER_DEPRECATED);
 		if (func_num_args() > 1 && is_array(func_get_arg(1))) {

@@ -14,7 +14,7 @@ namespace Nette;
 abstract class FreezableObject extends Object implements IFreezable
 {
 	/** @var bool */
-	private $frozen = FALSE;
+	private $frozen = false;
 
 
 	/**
@@ -23,7 +23,7 @@ abstract class FreezableObject extends Object implements IFreezable
 	 */
 	public function freeze()
 	{
-		$this->frozen = TRUE;
+		$this->frozen = true;
 	}
 
 
@@ -43,7 +43,7 @@ abstract class FreezableObject extends Object implements IFreezable
 	 */
 	public function __clone()
 	{
-		$this->frozen = FALSE;
+		$this->frozen = false;
 	}
 
 

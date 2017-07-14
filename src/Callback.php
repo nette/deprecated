@@ -25,7 +25,7 @@ class Callback extends Object
 	 * @param  string  method
 	 * @return self
 	 */
-	public static function create($callback, $m = NULL)
+	public static function create($callback, $m = null)
 	{
 		return new self($callback, $m);
 	}
@@ -35,10 +35,10 @@ class Callback extends Object
 	 * @param  mixed   class, object, callable
 	 * @param  string  method
 	 */
-	public function __construct($cb, $m = NULL)
+	public function __construct($cb, $m = null)
 	{
 		trigger_error(__CLASS__ . ' is deprecated.', E_USER_DEPRECATED);
-		if ($m !== NULL) {
+		if ($m !== null) {
 			$cb = array($cb, $m);
 
 		} elseif ($cb instanceof self) { // prevents wrapping itself
@@ -46,7 +46,7 @@ class Callback extends Object
 			return;
 		}
 
-		if (!is_callable($cb, TRUE)) {
+		if (!is_callable($cb, true)) {
 			throw new InvalidArgumentException('Invalid callback.');
 		}
 		$this->cb = $cb;
@@ -165,7 +165,7 @@ class Callback extends Object
 		} elseif (is_string($this->cb) && $this->cb[0] === "\0") {
 			return '{lambda}';
 		} else {
-			is_callable($this->cb, TRUE, $textual);
+			is_callable($this->cb, true, $textual);
 			return $textual;
 		}
 	}

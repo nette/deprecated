@@ -22,4 +22,4 @@ $template->registerHelperLoader('Nette\Templating\Helpers::loader');
 $template->hello = '<i>Hello</i>';
 $template->el = Html::el('div')->title('1/2"');
 
-Assert::matchFile(__DIR__ . '/expected/FileTemplate.html', $template->__toString(TRUE));
+Assert::matchFile(__DIR__ . '/expected/FileTemplate.html', $template->__toString(true));

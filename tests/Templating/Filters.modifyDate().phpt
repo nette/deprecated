@@ -14,7 +14,7 @@ require __DIR__ . '/../bootstrap.php';
 setlocale(LC_TIME, 'C');
 date_default_timezone_set('Europe/Prague');
 
-Assert::null(Helpers::modifyDate(NULL, NULL));
+Assert::null(Helpers::modifyDate(null, null));
 
 Assert::same('1978-01-24 11:40:00', (string) Helpers::modifyDate(254400000, '+1 day'));
 

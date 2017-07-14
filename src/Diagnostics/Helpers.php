@@ -21,7 +21,7 @@ class Helpers extends Tracy\Helpers
 	 * Returns link to editor.
 	 * @return Nette\Utils\Html
 	 */
-	public static function editorLink($file, $line = NULL)
+	public static function editorLink($file, $line = null)
 	{
 		trigger_error(__METHOD__ . '() is deprecated; use Tracy\Helpers::editorLink() instead.', E_USER_DEPRECATED);
 		if (Debugger::$editor && is_file($file)) {

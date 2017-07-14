@@ -16,7 +16,7 @@ use Nette;
  */
 class Engine extends Latte\Engine
 {
-	private $fixed = FALSE;
+	private $fixed = false;
 
 
 	public function __construct()
@@ -25,7 +25,7 @@ class Engine extends Latte\Engine
 		if (method_exists('Latte\Engine', '__construct')) {
 			parent::__construct();
 		}
-		$this->getParser()->shortNoEscape = TRUE;
+		$this->getParser()->shortNoEscape = true;
 		$this->addFilter('url', 'rawurlencode');
 		foreach (array('normalize', 'toAscii', 'webalize', 'padLeft', 'padRight', 'reverse') as $name) {
 			$this->addFilter($name, 'Nette\Utils\Strings::' . $name);
@@ -44,7 +44,7 @@ class Engine extends Latte\Engine
 	{
 		$compiler = parent::getCompiler();
 		if (!$this->fixed) {
-			$this->fixed = TRUE;
+			$this->fixed = true;
 			$compiler->addMacro('cache', new Nette\Bridges\CacheLatte\CacheMacro($compiler));
 			Nette\Bridges\ApplicationLatte\UIMacros::install($compiler);
 			Nette\Bridges\FormsLatte\FormMacros::install($compiler);

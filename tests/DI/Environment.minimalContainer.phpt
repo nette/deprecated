@@ -11,7 +11,7 @@ use Tester\Assert;
 require __DIR__ . '/../bootstrap.php';
 
 
-Assert::null(Environment::getVariable('foo', NULL), "Getting variable 'foo':");
+Assert::null(Environment::getVariable('foo', null), "Getting variable 'foo':");
 
 
 Assert::exception(function () {

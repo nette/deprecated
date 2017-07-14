@@ -10,7 +10,7 @@ if (!function_exists('dlog')) {
 	 * Tracy\Debugger::log() shortcut.
 	 * @deprecated
 	 */
-	function dlog($var = NULL)
+	function dlog($var = null)
 	{
 		trigger_error(__FUNCTION__ . '() is deprecated.', E_USER_DEPRECATED);
 		if (func_num_args() === 0) {
@@ -32,7 +32,7 @@ if (!function_exists('callback')) {
 	 * @return Nette\Callback
 	 * @deprecated
 	 */
-	function callback($callback, $m = NULL)
+	function callback($callback, $m = null)
 	{
 		trigger_error(__FUNCTION__ . '() is deprecated; use native PHP callback.', E_USER_DEPRECATED);
 		return new Nette\Callback($callback, $m);

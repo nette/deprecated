@@ -51,10 +51,10 @@ class Helpers extends Latte\Runtime\Filters
 	 * @param  string
 	 * @return Nette\Utils\DateTime
 	 */
-	public static function modifyDate($time, $delta, $unit = NULL)
+	public static function modifyDate($time, $delta, $unit = null)
 	{
-		return $time == NULL // intentionally ==
-			? NULL
+		return $time == null // intentionally ==
+			? null
 			: Nette\Utils\DateTime::from($time)->modify($delta . $unit);
 	}
 

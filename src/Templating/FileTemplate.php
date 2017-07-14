@@ -26,10 +26,10 @@ class FileTemplate extends Template implements IFileTemplate
 	 * Constructor.
 	 * @param  string  template file path
 	 */
-	public function __construct($file = NULL)
+	public function __construct($file = null)
 	{
 		trigger_error(__CLASS__ . ' is deprecated.', E_USER_DEPRECATED);
-		if ($file !== NULL) {
+		if ($file !== null) {
 			$this->setFile($file);
 		}
 	}
@@ -79,7 +79,7 @@ class FileTemplate extends Template implements IFileTemplate
 	 */
 	public function render()
 	{
-		if ($this->file == NULL) { // intentionally ==
+		if ($this->file == null) { // intentionally ==
 			throw new Nette\InvalidStateException('Template file name was not specified.');
 		}
 
@@ -97,7 +97,7 @@ class FileTemplate extends Template implements IFileTemplate
 		}
 		$cached = $compiled = $cache->load($this->file);
 
-		if ($compiled === NULL) {
+		if ($compiled === null) {
 			try {
 				$compiled = "<?php\n\n// source file: $this->file\n\n?>" . $this->compile();
 
@@ -112,7 +112,7 @@ class FileTemplate extends Template implements IFileTemplate
 			$cached = $cache->load($this->file);
 		}
 
-		$isFile = $cached !== NULL && $storage instanceof Caching\Storages\PhpFileStorage;
+		$isFile = $cached !== null && $storage instanceof Caching\Storages\PhpFileStorage;
 		self::load($isFile ? $cached['file'] : $compiled, $this->getParameters(), $isFile);
 	}
 }

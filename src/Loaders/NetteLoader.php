@@ -74,7 +74,7 @@ class NetteLoader
 	 */
 	public static function getInstance()
 	{
-		if (self::$instance === NULL) {
+		if (self::$instance === null) {
 			self::$instance = new static;
 		}
 		return self::$instance;
@@ -86,9 +86,9 @@ class NetteLoader
 	 * @param  bool  prepend autoloader?
 	 * @return void
 	 */
-	public function register($prepend = FALSE)
+	public function register($prepend = false)
 	{
-		spl_autoload_register(array($this, 'tryLoad'), TRUE, (bool) $prepend);
+		spl_autoload_register(array($this, 'tryLoad'), true, (bool) $prepend);
 	}
 
 
