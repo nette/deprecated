@@ -3,8 +3,8 @@ php:
     - 7.1
 
 script:
-    - vendor/bin/tester tests -s -p php
-    - php code-checker/src/code-checker.php -i template.latte
+    - vendor/bin/tester tests -s
+    - php temp/code-checker/code-checker
 
 after_failure:
     # Print *.actual content
@@ -13,7 +13,7 @@ after_failure:
 before_script:
     # Install Nette Tester & Code Checker
     - travis_retry composer install --no-interaction --prefer-dist
-    - travis_retry composer create-project nette/code-checker code-checker ~2.5 --no-interaction
+    - travis_retry composer create-project nette/code-checker temp/code-checker ^3 --no-progress
 
 sudo: false
 
