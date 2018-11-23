@@ -15,6 +15,9 @@
 			"homepage": "https://nette.org/contributors"
 		}
 	],
+	"require": {
+		"php": ">=7.1"
+	},
 	"require-dev": {
 		"tracy/tracy": "^2.6",
 		"nette/tester": "^2.0"
