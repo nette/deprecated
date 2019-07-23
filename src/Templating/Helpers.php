@@ -64,7 +64,7 @@ class Helpers extends Latte\Runtime\Filters
 	 * @param  mixed
 	 * @return int
 	 */
-	public static function length($var)
+	public static function length($var): int
 	{
 		return is_string($var) ? Strings::length($var) : count($var);
 	}
