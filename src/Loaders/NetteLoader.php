@@ -39,10 +39,8 @@ class NetteLoader
 
 	/**
 	 * Register autoloader.
-	 * @param  bool  prepend autoloader?
-	 * @return void
 	 */
-	public function register($prepend = false)
+	public function register(bool $prepend = false): void
 	{
 		spl_autoload_register([$this, 'tryLoad'], true, (bool) $prepend);
 	}
@@ -50,10 +48,8 @@ class NetteLoader
 
 	/**
 	 * Handles autoloading of classes or interfaces.
-	 * @param  string
-	 * @return void
 	 */
-	public function tryLoad($type)
+	public function tryLoad(string $type): void
 	{
 		$type = ltrim($type, '\\');
 		if (isset($this->list[$type])) {

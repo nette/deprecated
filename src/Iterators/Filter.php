@@ -9,8 +9,6 @@ declare(strict_types=1);
 
 namespace Nette\Iterators;
 
-use Nette;
-
 
 /**
  * CallbackFilterIterator for PHP < 5.4.
@@ -22,16 +20,16 @@ class Filter extends \FilterIterator
 	protected $callback;
 
 
-	public function __construct(\Iterator $iterator, $callback)
+	public function __construct(\Iterator $iterator, callable $callback)
 	{
 		trigger_error(__CLASS__ . ' is deprecated, use CallbackFilterIterator.', E_USER_WARNING);
 		parent::__construct($iterator);
-		$this->callback = Nette\Utils\Callback::check($callback);
+		$this->callback = $callback;
 	}
 
 
 	public function accept()
 	{
-		return call_user_func($this->callback, $this->current(), $this->key(), $this);
+		return ($this->callback)($this->current(), $this->key(), $this);
 	}
 }

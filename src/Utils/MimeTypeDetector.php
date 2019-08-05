@@ -19,7 +19,6 @@ use Nette;
  */
 class MimeTypeDetector
 {
-
 	/**
 	 * Static class - cannot be instantiated.
 	 */
@@ -31,10 +30,8 @@ class MimeTypeDetector
 
 	/**
 	 * Returns the MIME content type of file.
-	 * @param  string
-	 * @return string
 	 */
-	public static function fromFile($file)
+	public static function fromFile(string $file): string
 	{
 		trigger_error(__METHOD__ . '() is deprecated; use finfo_file() instead.', E_USER_DEPRECATED);
 		if (!is_file($file)) {
@@ -47,10 +44,8 @@ class MimeTypeDetector
 
 	/**
 	 * Returns the MIME content type of file.
-	 * @param  string
-	 * @return string
 	 */
-	public static function fromString($data)
+	public static function fromString(string $data): string
 	{
 		trigger_error(__METHOD__ . '() is deprecated; use finfo_buffer() instead.', E_USER_DEPRECATED);
 		$type = finfo_buffer(finfo_open(FILEINFO_MIME_TYPE), $data);
