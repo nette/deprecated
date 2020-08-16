@@ -29,7 +29,7 @@ class TestClass extends Nette\LegacyObject
 }
 
 
-test(function () {
+test('', function () {
 	$obj = new TestClass(function ($a, $b) {
 		return "$a $b";
 	});
@@ -38,7 +38,7 @@ test(function () {
 });
 
 
-test(function () {
+test('', function () {
 	Assert::exception(function () {
 		$obj = new TestClass(123);
 		$obj->onPublic = function () {}; // accidentally forgotten []

@@ -22,7 +22,7 @@ define('TEMP_DIR', __DIR__ . '/tmp/' . lcg_value());
 @mkdir(TEMP_DIR);
 
 
-function test(\Closure $function): void
+function test(string $title, Closure $function): void
 {
 	$function();
 }

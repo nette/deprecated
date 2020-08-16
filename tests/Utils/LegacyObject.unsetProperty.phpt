@@ -17,7 +17,7 @@ class TestClass extends Nette\LegacyObject
 }
 
 
-test(function () {
+test('', function () {
 	$obj = new TestClass;
 	unset($obj->foo);
 	Assert::false(isset($obj->foo));
@@ -28,15 +28,13 @@ test(function () {
 });
 
 
-test(function () {
-	// double unset
+test('double unset', function () {
 	$obj = new TestClass;
 	unset($obj->foo, $obj->foo);
 });
 
 
-test(function () {
-	// reading of unset property
+test('reading of unset property', function () {
 	Assert::exception(function () {
 		$obj = new TestClass;
 		unset($obj->foo);
