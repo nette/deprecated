@@ -59,8 +59,10 @@ abstract class LegacyObject
 	 */
 	public static function getReflection()
 	{
-		$class = class_exists(Nette\Reflection\ClassType::class) ? Nette\Reflection\ClassType::class : 'ReflectionClass';
-		return new $class(get_called_class());
+		$class = class_exists(Nette\Reflection\ClassType::class)
+			? Nette\Reflection\ClassType::class
+			: 'ReflectionClass';
+		return new $class(static::class);
 	}
 
 
@@ -86,7 +88,7 @@ abstract class LegacyObject
 	 */
 	public static function __callStatic($name, $args)
 	{
-		return Nette\Utils\LegacyObjectMixin::callStatic(get_called_class(), $name, $args);
+		return Nette\Utils\LegacyObjectMixin::callStatic(static::class, $name, $args);
 	}
 
 
@@ -99,7 +101,7 @@ abstract class LegacyObject
 	public static function extensionMethod($name, $callback = null)
 	{
 		if (strpos($name, '::') === false) {
-			$class = get_called_class();
+			$class = static::class;
 		} else {
 			[$class, $name] = explode('::', $name);
 			$class = (new \ReflectionClass($class))->getName();

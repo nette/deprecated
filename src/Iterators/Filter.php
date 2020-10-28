@@ -22,7 +22,7 @@ class Filter extends \FilterIterator
 
 	public function __construct(\Iterator $iterator, callable $callback)
 	{
-		trigger_error(__CLASS__ . ' is deprecated, use CallbackFilterIterator.', E_USER_WARNING);
+		trigger_error(self::class . ' is deprecated, use CallbackFilterIterator.', E_USER_WARNING);
 		parent::__construct($iterator);
 		$this->callback = $callback;
 	}

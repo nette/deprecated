@@ -53,7 +53,11 @@ class LegacyObjectMixin
 		} elseif ($isProp && $_this->$name instanceof \Closure) { // closure in property
 			return ($_this->$name)(...$args);
 
-		} elseif (($methods = &self::getMethods($class)) && isset($methods[$name]) && is_array($methods[$name])) { // magic @methods
+		} elseif (
+			($methods = &self::getMethods($class))
+			&& isset($methods[$name])
+			&& is_array($methods[$name])
+		) { // magic @methods
 			[$op, $rp, $type] = $methods[$name];
 			if (count($args) !== ($op === 'get' ? 0 : 1)) {
 				throw new Nette\InvalidArgumentException("$class::$name() expects " . ($op === 'get' ? 'no' : '1') . ' argument, ' . count($args) . ' given.');
@@ -124,7 +128,10 @@ class LegacyObjectMixin
 			}
 
 		} elseif (isset($methods[$name])) { // public method as closure getter
-			if (preg_match('#^(is|get|has)([A-Z]|$)#', $name) && !(new \ReflectionMethod($class, $name))->getNumberOfRequiredParameters()) {
+			if (
+				preg_match('#^(is|get|has)([A-Z]|$)#', $name)
+				&& !(new \ReflectionMethod($class, $name))->getNumberOfRequiredParameters()
+			) {
 				trigger_error("Did you forget parentheses after $name" . self::getSource() . '?', E_USER_WARNING);
 			}
 			$val = \Closure::fromCallable([$_this, $name]);
@@ -230,7 +237,10 @@ class LegacyObjectMixin
 				if ($op === 'get' || $op === 'is') {
 					$type = null;
 					$op = 'get';
-				} elseif (!$type && preg_match('#@var[ \t]+(\S+)' . ($op === 'add' ? '\[\]#' : '#'), (string) $rp->getDocComment(), $m)) {
+				} elseif (
+					!$type
+					&& preg_match('#@var[ \t]+(\S+)' . ($op === 'add' ? '\[\]#' : '#'), (string) $rp->getDocComment(), $m)
+				) {
 					$type = $m[1];
 				}
 				if ($rc->inNamespace() && preg_match('#^[A-Z]\w+(\[|\||\z)#', (string) $type)) {

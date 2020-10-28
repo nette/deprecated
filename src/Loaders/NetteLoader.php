@@ -55,7 +55,10 @@ class NetteLoader
 		if (isset($this->list[$type])) {
 			require __DIR__ . '/../' . $this->list[$type] . '.php';
 
-		} elseif (substr($type, 0, 6) === 'Nette\\' && is_file($file = __DIR__ . '/../' . strtr(substr($type, 5), '\\', '/') . '.php')) {
+		} elseif (
+			substr($type, 0, 6) === 'Nette\\'
+			&& is_file($file = __DIR__ . '/../' . strtr(substr($type, 5), '\\', '/') . '.php')
+		) {
 			require $file;
 		}
 	}
